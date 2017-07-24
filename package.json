@@ -35,7 +35,7 @@
     "cliff": "0.1.8",
     "mkdirp": "0.3.3",
     "pomelo-loader": "0.0.7",
-    "pomelo-rpc": "topfreegames/pomelo-logger#new-pomelo-logger",
+    "pomelo-rpc": "topfreegames/pomelo-rpc#1.0.3-new-logger",
     "pomelo-protocol": "0.1.6",
     "pomelo-logger": "topfreegames/pomelo-logger#0.1.8",
     "pomelo-scheduler": "0.3.9",
