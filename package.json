@@ -1,6 +1,6 @@
 {
   "name": "pomelo",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": false,
   "homepage": "https://github.com/NetEase/pomelo",
   "repository": {
@@ -42,7 +42,7 @@
     "pomelo-logger": "topfreegames/pomelo-logger#0.1.9",
     "pomelo-protobuf": "0.4.0",
     "pomelo-protocol": "0.1.6",
-    "pomelo-rpc": "topfreegames/pomelo-rpc#1.1.0-new-logger",
+    "pomelo-rpc": "topfreegames/pomelo-rpc#1.1.0-tracing",
     "pomelo-scheduler": "topfreegames/pomelo-scheduler#new-pomelo-logger",
     "redis": "0.12.1",
     "seq-queue": "0.0.5",
