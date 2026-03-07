@@ -114,7 +114,7 @@ describe('connection service test', function() {
   it('should getStatisticsInfo',  function(done){
     var service = new ConnectionService(mockApp);
     var uid1 = 'uid1', uid2 = 'uid2';
-    var info1 = 'msg1', info2 = 'msg2';
+    var info1 = { msg: 'msg1' }, info2 = { msg: 'msg2' };
 
     service.increaseConnectionCount();
     service.increaseConnectionCount();
@@ -122,7 +122,6 @@ describe('connection service test', function() {
 
     service.addLoginedUser(uid1, info1);
     service.addLoginedUser(uid2, info2);
-
 
     var sinfo = service.getStatisticsInfo();
 
@@ -133,8 +132,8 @@ describe('connection service test', function() {
     var infos = sinfo.loginedList;
     should.exist(infos);
     infos.length.should.equal(2);
-    infos.should.include(info1);
-    infos.should.include(info2);
+    infos.should.containEql(info1);
+    infos.should.containEql(info2);
 
     done();
   });

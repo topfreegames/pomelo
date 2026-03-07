@@ -12,7 +12,7 @@
         "type": "basic"
       },
       "backups": 5,
-      "category": "con-log"
+      "category": "con_log"
     },
     {
       "type": "file",
@@ -22,7 +22,7 @@
         "type": "basic"
       },
       "backups": 5,
-      "category": "rpc-log"
+      "category": "rpc_log"
     },
     {
       "type": "file",
@@ -32,7 +32,7 @@
         "type": "basic"
       },
       "backups": 5,
-      "category": "forward-log"
+      "category": "forward_log"
     },
     {
      "type": "file",
@@ -42,7 +42,7 @@
       "type": "basic"
      },
      "backups": 5,
-     "category": "rpc-debug"
+     "category": "rpc_debug"
     },
     {
       "type": "file",
@@ -52,7 +52,7 @@
         "type": "basic"
       },
       "backups": 5,
-      "category":"crash-log"
+      "category":"crash_log"
     },
     {
       "type": "file",
@@ -62,7 +62,7 @@
           "type": "basic"
         }
       ,"backups": 5,
-      "category":"admin-log"
+      "category":"admin_log"
     },
     {
       "type": "file",
@@ -82,7 +82,7 @@
           "type": "basic"
         }
       ,"backups": 5,
-      "category":"pomelo-admin"
+      "category":"pomelo_admin"
     },
     {
       "type": "file",
@@ -92,14 +92,9 @@
           "type": "basic"
         }
       ,"backups": 5,
-      "category":"pomelo-rpc"
+      "category":"pomelo_rpc"
     }
   ],
-
-  "levels": {
-    "rpc-log" : "ERROR",
-    "forward-log": "ERROR"
-  },
 
   "replaceConsole": true,
 

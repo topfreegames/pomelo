@@ -1,84 +1,52 @@
 {
-  "appenders": [
-    {
+  "appenders": {
+    "node": {
       "type": "file",
       "filename": "./test/logs/node-log-${opts:serverId}.log",
-      "fileSize": 1048576,
-      "layout": {
-        "type": "basic"
-      },
-      "backups": 5
+      "layout": { "type": "basic" }
     },
-    {
-      "type": "console"
-    },
-    {
+    "console": { "type": "console" },
+    "con_log": {
       "type": "file",
       "filename": "./test/logs/con-log-${opts:serverId}.log",
-      "pattern": "connector",
-      "maxLogSize": 1048576,
-      "layout": {
-        "type": "basic"
-      },
-      "backups": 5,
-      "category":"con-log"
+      "layout": { "type": "basic" }
     },
-    {
+    "rpc_log": {
       "type": "file",
       "filename": "./test/logs/rpc-log-${opts:serverId}.log",
-      "fileSize": 1048576,
-      "layout": {
-        "type": "basic"
-      },
-      "backups": 5,
-      "category":"rpc-log"
+      "layout": { "type": "basic" }
     },
-    {
+    "forward_log": {
       "type": "file",
       "filename": "./test/logs/forward-log-${opts:serverId}.log",
-      "fileSize": 1048576,
-      "layout": {
-        "type": "basic"
-      },
-      "backups": 5,
-      "category":"forward-log"
+      "layout": { "type": "basic" }
     },
-    {
+    "crash_log": {
       "type": "file",
       "filename": "./test/logs/crash.log",
-      "fileSize": 1048576,
-      "layout": {
-        "type": "basic"
-      },
-      "backups": 5,
-      "category":"crash-log"
+      "layout": { "type": "basic" }
     },
-    {
+    "transaction_log": {
       "type": "file",
       "filename": "./test/logs/transaction.log",
-      "fileSize": 1048576,
-      "layout": {
-        "type": "basic"
-      },
-      "backups": 5,
-      "category":"transaction-log"
+      "layout": { "type": "basic" }
     },
-    {
+    "transaction_error_log": {
       "type": "file",
       "filename": "./test/logs/transaction-error.log",
-      "fileSize": 1048576,
-      "layout": {
-        "type": "basic"
-      },
-      "backups": 5,
-      "category":"transaction-error-log"
+      "layout": { "type": "basic" }
     }
-  ],
-
-  "levels": {
-    "rpc-log" : "ERROR",
-    "forward-log": "ERROR"
   },
-
+  "categories": {
+    "default": { "appenders": ["node", "console"], "level": "ALL" },
+    "pomelo": { "appenders": ["node", "console"], "level": "ALL" },
+    "con_log": { "appenders": ["con_log"], "level": "ALL" },
+    "rpc_log": { "appenders": ["rpc_log"], "level": "ALL" },
+    "forward_log": { "appenders": ["forward_log"], "level": "ALL" },
+    "crash_log": { "appenders": ["crash_log"], "level": "ALL" },
+    "transaction_log": { "appenders": ["transaction_log"], "level": "ALL" },
+    "transaction_error_log": { "appenders": ["transaction_error_log"], "level": "ALL" },
+    "rpc_debug": { "appenders": ["node", "console"], "level": "ALL" }
+  },
   "replaceConsole": true
 }

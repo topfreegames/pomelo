@@ -14,5 +14,6 @@ node_modules/*
 lib/doc/
 lib-cov/
 coverage.html
+coverage/
 .DS_Store
 .idea/*

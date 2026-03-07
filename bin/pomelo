@@ -4,15 +4,11 @@
 
 const fs = require('fs');
 const path = require('path');
-const mkdirp = require('mkdirp');
+const { mkdirp } = require('mkdirp');
 const spawn = require('child_process').spawn;
 const version = require('../package.json').version;
 const constants = require('../lib/util/constants');
 const program = require('commander');
-
-/* eslint-disable no-unused-vars */
-const cliff = require('cliff');
-/* eslint-enable no-unused-vars */
 
 const TIME_INIT = 1 * 1000;
 
@@ -29,7 +25,7 @@ const SCRIPT_NOT_FOUND = 'Fail to find an appropriate script to run, \n' +
                          'please check the current work directory or the directory ' +
                          'specified by option `--directory`.\n'.red;
 
-const COMMAND_ERROR = 'Illegal command format. Use `pomelo --help` to get more info.\n'.red;
+const COMMAND_ERROR = 'Illegal command format. Use `pomelo --help` to get more info.\n';
 const DAEMON_INFO = 'The application is running in the background now.\n';
 
 program.version(version);
@@ -393,15 +389,16 @@ function copy(origin, target) {
  * @param {Function} fn
  */
 function mkdir(path, fn) {
-  mkdirp(path, '0755', function(err) {
-    if (err) {
+  mkdirp(path, { mode: 0o755 })
+    .then(function() {
+      console.log('   create : '.green + path);
+      if (typeof fn === 'function') {
+        fn();
+      }
+    })
+    .catch(function(err) {
       throw err;
-    }
-    console.log('   create : '.green + path);
-    if (typeof fn === 'function') {
-      fn();
-    }
-  });
+    });
 }
 
 /**

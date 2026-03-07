@@ -187,8 +187,8 @@ var mockApp = {serverId: 'test-server-1'};
         should.not.exist(err);
         should.exist(fails);
         fails.length.should.equal(2);
-        fails.should.include(uid1);
-        fails.should.include(uid3);
+        fails.should.containEql(uid1);
+        fails.should.containEql(uid3);
         done();
       });
     });
@@ -238,7 +238,7 @@ var mockApp = {serverId: 'test-server-1'};
         invokeCount.should.equal(2);
         sids.length.should.equal(connectorIds.length);
         for(var i=0, l=connectorIds.length; i<l; i++) {
-          sids.should.include(connectorIds[i]);
+          sids.should.containEql(connectorIds[i]);
         }
         done();
       });

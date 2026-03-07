@@ -12,35 +12,31 @@ module.exports = function(grunt) {
 
 
   // Project configuration.
+  // Coverage is generated via: npm run test:coverage (uses c8, no blanket)
   grunt.initConfig({
     mochaTest: {
       test: {
         options: {
           reporter: 'spec',
-          timeout: 5000,
-          require: 'coverage/blanket'
-        },
-        src: src
-      },
-      coverage: {
-        options: {
-          reporter: 'html-cov',
-          quiet: true,
-          captureFile: 'coverage.html'
+          timeout: 5000
         },
         src: src
       }
     },
     clean: {
-      'coverage.html': {
-        src: ['coverage.html']
+      coverage: {
+        src: ['coverage']
       }
     },
     jshint: {
       all: ['lib/*'],
       options: {
         node: true,
-        sub: true
+        sub: true,
+        esversion: 6,
+        asi: true,
+        validthis: true,
+        loopfunc: true
       }
     }
   });
